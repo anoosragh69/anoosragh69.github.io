@@ -1,187 +1,92 @@
-/* Header Starts */
-.header {
-    height: 90vh;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
-    background-color: #202125;
+.hero {
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    align-content: center;
-}
-
-.header h2 {
-    font-size: 4vh;
-    font-weight: 100;
-}
-
-#logo text {
-    cursor: default;
-    font-size: 20vh;
-    color: #202125;
-    stroke-width: 2px;
-    stroke: #AFCBFD;
-    stroke-dasharray: 800;
-    stroke-dashoffset: 0;
-    animation: animate 8s linear forwards infinite;
-}
-
-.button {
-    margin: 1vh 1vw;
-    font-size: 2vh;
-    display: inline-block;
-    padding: 16px 32px;
-    border-radius: 20px;
-    border-width: 2;
-    border-style: solid;
-    background-color: transparent;
-    border-color: white;
-    color: white;
-    cursor: pointer;
-    transition: 0.5s;
-}
-
-.button:hover {
-    font-weight: bold;
-    color: #202125;
-    background-color: white;
-    transform: scale(1.2, 1.2);
-}
-
-
-@keyframes animate {
-    0% {
-        stroke-dashoffset: 0;
-    }
-
-    40% {
-        stroke-dashoffset: 800;
-    }
-
-    100% {
-        stroke-dashoffset: 1600;
-    }
-}
-
-/* Header Completed */
-
-/* Features Starts */
-.features {
-    margin: 5vh 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-content: center;
-    align-items: center;
-}
-
-.features .item {
-    color: white;
-    padding: 2vh 2vw;
-    margin: 0 2vw;
-    background-color: #202125;
-    border-radius: 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    transition: 1s;
-    cursor: pointer;
-}
-
-.features .item img {
-    width: 50%;
-}
-
-.features .item h1 {
-    font-size: 5vh;
-}
-
-.features .item h2 {
-    font-size: 2vh;
-    color: rgba(255, 255, 255, 0.8);
     text-align: center;
+    padding: 48px 24px;
 }
 
-.features .item:hover {
-    transform: scale(1.05, 1.05)
+.hero-logo {
+    width: 230px;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid #52525b;
 }
 
-/* Features Completed */
-
-/* Footer Starts */
-.footer {
-    background-color: #202125;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+.hero-name {
+    margin: 28px 0 12px;
+    color: var(--accent);
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
 }
 
+.hero-bio {
+    margin: 0;
+    color: var(--text);
+    font-size: 18px;
+    max-width: 600px;
+}
 
-.download {
-    padding: 2vh 2vw;
+.hero-tag {
+    margin: 44px 0 24px;
+    color: var(--text-muted);
+    font-size: 17px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.socials {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-}
-.download img{
-    width: 20%;
-    cursor: pointer;
-    transition: 0.7s;
-}
-.download img:hover{
-    transform: scale(1.1,1.1)
-}
-.download .text {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-content: center;
     align-items: center;
+    gap: 10px;
 }
 
-.download .text h1 {
-    margin: 0;
-    font-size: 7vh;
+.social {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    color: var(--text);
+    background-color: var(--surface);
+    border-radius: var(--radius);
+    border: 1px solid var(--ring);
+    transition: background-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
 }
 
-.download .text h2 {
-    font-size: 2vh;
+.social:hover {
+    background-color: var(--surface-hover);
+    color: var(--bg);
 }
 
-#screenshot{
-    height: 60vh;
-}
-#screenshot img{
-   width: auto;
-    height: 90%;
+.social:active {
+    transform: scale(0.98);
 }
 
-@media screen and (max-width: 1024px) {
-    #logo text {
-        font-size: 11vh;
+@media screen and (max-width: 768px) {
+    .hero-logo {
+        width: 170px;
+        height: 170px;
     }
 
-    .header h2 {
-        font-size: 2vh;
+    .hero-name {
+        font-size: 30px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .navbar a,
+    .social {
+        transition: none;
     }
 
-    .features {
-        flex-direction: column;
-        margin: 5vh 2vw;
-    }
-
-    .features .item {
-        margin: 2vh 0;
-
-    }
-    .download .text {
-        display: none;
+    .social:active {
+        transform: none;
     }
 }
